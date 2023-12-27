@@ -25,6 +25,9 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 
 **TODO:**
-1. Better products page with sorting and filtering
-2. Storing product files and images in S3
-3. Better categorization of products
+1. Fix download link
+2. Better products page with sorting and filtering
+3. Storing product files and images in S3
+   1. [https://payloadcms.com/blog/plugin-cloud-storage](https://payloadcms.com/blog/plugin-cloud-storage)
+4. Send receipt to no cost orders
+5. Better categorization of products
