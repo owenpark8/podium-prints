@@ -1,5 +1,6 @@
 "use client";
 import { Button, buttonVariants } from "@/components/ui/button";
+import { PRODUCT_BRANDS } from "@/config";
 import { useCart } from "@/hooks/use-cart";
 import { cn, formatPrice } from "@/lib/utils";
 import { trpc } from "@/trpc/client";
@@ -74,6 +75,10 @@ const Page = () => {
             >
               {isMounted &&
                 items.map(({ product }) => {
+                  const brand = PRODUCT_BRANDS.find(
+                    ({ value }) => value === product.brand
+                  )?.label;
+
                   const { image } = product.images[0];
                   return (
                     <li key={product.id} className="flex py-6 sm:py-10">
@@ -96,13 +101,16 @@ const Page = () => {
                               <h3 className="text-sm">
                                 <Link
                                   href={`/product/${product.id}`}
-                                  className="font-semibold text-base text-gray-700 hover:text-black"
+                                  className="font-semibold text-base text-black hover:text-gray-700"
                                 >
                                   {product.name}
                                 </Link>
                               </h3>
                             </div>
-                            <p className="mt-1 text-sm font-medium text-gray-700">
+                            <p className="mt-1 text-sm font-medium text-muted-foreground">
+                              {brand}
+                            </p>
+                            <p className="mt-1 text-sm font-medium">
                               {formatPrice(product.price)}
                             </p>
                           </div>

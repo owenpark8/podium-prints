@@ -5,11 +5,15 @@ import { ImageIcon, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
 import { SheetTrigger } from "./ui/sheet";
+import { PRODUCT_BRANDS } from "@/config";
 
 const CartItem = ({ product }: { product: Product }) => {
   const { image } = product.images[0];
 
   const { removeItem } = useCart();
+
+  const brand = PRODUCT_BRANDS.find(({ value }) => value === product.brand)
+    ?.label;
 
   return (
     <div className="space-y-3 py-2">
@@ -40,17 +44,18 @@ const CartItem = ({ product }: { product: Product }) => {
             <SheetTrigger asChild>
               <Link
                 href={`/product/${product.id}`}
-                className="line-clamp-1 text-sm font-semibold mb-1 hover:text-gray-700"
+                className="line-clamp-1 text-sm font-semibold hover:text-gray-700"
               >
                 {product.name}
               </Link>
             </SheetTrigger>
+            <span className="line-clamp-1 text-xs capitalize text-muted-foreground">
+              {brand}
+            </span>
 
-            <div className="font-medium">
-              <span className="ml-auto line-clamp-1 text-sm">
-                {formatPrice(product.price)}
-              </span>
-            </div>
+            <span className="line-clamp-1 text-sm font-medium">
+              {formatPrice(product.price)}
+            </span>
           </div>
         </div>
         <div className="text-xs text-muted-foreground">

@@ -2,9 +2,9 @@ import AddToCartButton from "@/components/AddToCartButton";
 import ImageSlider from "@/components/ImageSlider";
 import MaxWidthWrapper from "@/components/MaxWidthWrapper";
 import ProductReel from "@/components/ProductReel";
+import { PRODUCT_BRANDS } from "@/config";
 import { getPayloadClient } from "@/get-payload";
 import { formatPrice } from "@/lib/utils";
-import { Check } from "lucide-react";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 
@@ -43,6 +43,9 @@ const Page = async ({ params }: PageProps) => {
     .map(({ image }) => (typeof image === "string" ? image : image.url))
     .filter(Boolean) as string[];
 
+  const brand = PRODUCT_BRANDS.find(({ value }) => value === product.brand)
+    ?.label;
+
   return (
     <MaxWidthWrapper className="bg-white">
       <div className="bg-white">
@@ -79,13 +82,14 @@ const Page = async ({ params }: PageProps) => {
                 {product.name}
               </h1>
             </div>
-            <section className="mt-4">
-              <div className="flex items-center">
-                <p className="font-medium text-gray-900">
-                  {formatPrice(product.price)}
-                </p>
-              </div>
-              <div className="mt-4 space-y-6">
+            <section className="mt-1">
+              <p className="text-sm font-medium text-muted-foreground">
+                {brand}
+              </p>
+              <p className="mt-1 text-lg font-medium text-gray-900">
+                {formatPrice(product.price)}
+              </p>
+              <div className="mt-2 space-y-6">
                 <p className="text-base text-muted-foreground">
                   {product.description}
                 </p>

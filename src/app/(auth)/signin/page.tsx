@@ -18,8 +18,8 @@ import { useForm } from "react-hook-form";
 import { toast } from "sonner";
 
 const Page = () => {
-  const searchParams = useSearchParams();
   const router = useRouter();
+  const searchParams = useSearchParams();
   const origin = searchParams.get("origin");
 
   const {
@@ -35,6 +35,7 @@ const Page = () => {
       toast.success("Signed in successfully");
 
       if (origin) {
+        router.refresh();
         router.push(`/${origin}`);
         router.refresh();
         return;

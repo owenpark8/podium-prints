@@ -63,7 +63,7 @@ export const NAV_CATEGORIES = [
   //   ],
   // },
   {
-    label: "Brands",
+    label: "Popular Brands",
     value: "brands" as const,
     featured: [
       {
