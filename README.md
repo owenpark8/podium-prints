@@ -1,4 +1,4 @@
-![Podium Prints Logo](public/podium_prints_logo.png)
+# Podium Prints
 We offer a collection of vintage automotive artwork, including posters and print-advertisements. These pieces celebrate the innovation and design of the automotive industry's past, serving as a tribute to the enduring influence and aesthetic of classic cars and engineering.
 
 #### TODO:
