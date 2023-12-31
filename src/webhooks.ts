@@ -6,6 +6,7 @@ import { getPayloadClient } from "./get-payload";
 import { Product } from "./payload-types";
 import { Resend } from "resend";
 import { ReceiptEmailHtml } from "./components/emails/ReceiptEmail";
+import { useCart } from "./hooks/use-cart";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 
@@ -83,10 +84,13 @@ export const stripeWebhookHandler = async (
       },
     });
 
+    const { clearCart } = useCart();
+    clearCart();
+
     // send receipt
     try {
       const data = await resend.emails.send({
-        from: "DigitalHippo <hello@joshtriedcoding.com>",
+        from: "Podium Prints <no-reply@owenpark.info>",
         to: [user.email],
         subject: "Thanks for your order! This is your receipt.",
         html: ReceiptEmailHtml({

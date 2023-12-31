@@ -1,11 +1,6 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   images: {
-    // domains: [
-    //   "localhost",
-    //   "podium-prints.com",
-    //   "podium-prints-production.up.railway.app",
-    // ],
     remotePatterns: [
       {
         hostname: "localhost",
@@ -14,8 +9,20 @@ const nextConfig = {
         protocol: "http",
       },
       {
+        hostname: "localhost",
+        pathname: "**",
+        port: "4566",
+        protocol: "http",
+      },
+      {
+        hostname: "localhost.localstack.cloud",
+        pathname: "**",
+        port: "4566",
+        protocol: "http",
+      },
+      {
         protocol: "https",
-        hostname: "podium-prints-production.up.railway.app",
+        hostname: "podium-prints.com",
       },
     ],
   },

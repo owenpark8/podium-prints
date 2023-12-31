@@ -60,9 +60,8 @@ export const ProductFiles: CollectionConfig = {
   },
   // TODO: Impolement S3 bucket
   upload: {
-    staticURL: "/product_files",
-    staticDir: "product_files",
-    mimeTypes: ["application/pdf", "image/*"],
+    disableLocalStorage: true,
+    mimeTypes: ["application/pdf", "image/tiff", "image/png"],
   },
   fields: [],
 };

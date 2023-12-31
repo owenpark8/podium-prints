@@ -19,7 +19,6 @@ const Page = () => {
     trpc.payment.createSession.useMutation({
       onSuccess: ({ url }) => {
         if (url) {
-          clearCart();
           router.push(url);
         }
         // else {
@@ -28,7 +27,7 @@ const Page = () => {
       },
     });
 
-  const { items, removeItem, clearCart } = useCart();
+  const { items, removeItem } = useCart();
   const total = items.reduce((total, { product }) => total + product.price, 0);
 
   const productIds = items.map(({ product }) => product.id);
