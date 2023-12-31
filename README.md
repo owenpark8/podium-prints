@@ -25,9 +25,9 @@ We offer a collection of vintage automotive artwork, including posters and print
    ```
 
 2. **Set up your environment variables:**
-   Rename the `.env.example` file in the root directory to `.env`
+   Rename the `.env.local` file in the root directory to `.env`
    ```bash
-   mv .env.example .env
+   mv .env.local .env
    ```
 
    Populate the following values in `.env` with your own:
