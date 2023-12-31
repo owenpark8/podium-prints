@@ -40,5 +40,14 @@ next-env.d.ts
 
 .vscode
 
+# collection files
 src/media/*
 src/product_files/*
+
+# docker
+/ls-volume
+
+# terraform
+.terraform/
+.terraform.*
+terraform.*
