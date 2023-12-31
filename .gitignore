@@ -39,6 +39,9 @@ next-env.d.ts
 
 .vscode
 
+# collection files
+src/media/*
+
 # docker
 /ls-volume
 
