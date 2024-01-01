@@ -1,7 +1,7 @@
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
 # dependencies
-/node_modules
+node_modules
 /.pnp
 .pnp.js
 .yarn/install-state.gz
@@ -43,9 +43,15 @@ next-env.d.ts
 src/media/*
 
 # docker
-/ls-volume
+ls-volume
 
 # terraform
 .terraform/
 .terraform.*
 terraform.*
+
+# aws
+ec2
+*.pem
+*.csv
+
