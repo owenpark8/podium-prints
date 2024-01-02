@@ -1,11 +1,10 @@
 version: '3.8'
 
 services: 
-  app:
-    container_name: app
+  app-dev:
+    container_name: app-dev
     build:
       context: .
-      target: dev
       dockerfile: Dockerfile.development
     volumes:
       - .:/usr/src/app
