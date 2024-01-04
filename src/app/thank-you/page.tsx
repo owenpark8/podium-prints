@@ -16,6 +16,9 @@ interface PageProps {
 }
 
 const ThankYouPage = async ({ searchParams }: PageProps) => {
+  const { clearCart } = useCart();
+  clearCart();
+
   const orderId = searchParams.orderId;
 
   const nextCookies = cookies();

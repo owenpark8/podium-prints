@@ -84,9 +84,6 @@ export const stripeWebhookHandler = async (
       },
     });
 
-    const { clearCart } = useCart();
-    clearCart();
-
     // send receipt
     try {
       const data = await resend.emails.send({
