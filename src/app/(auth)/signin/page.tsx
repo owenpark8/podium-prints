@@ -34,12 +34,11 @@ const Page = () => {
     onSuccess: () => {
       toast.success("Signed in successfully");
 
-      if (origin) {
-        router.refresh();
-        router.push(`/${origin}`);
-        router.refresh();
-        return;
-      }
+      // TODO: FIX THIS
+      // if (origin) {
+      //   router.push(`/${origin}`);
+      //   return;
+      // }
 
       router.push("/");
       router.refresh();
