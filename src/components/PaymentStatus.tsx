@@ -1,5 +1,6 @@
 "use client";
 
+import { useCart } from "@/hooks/use-cart";
 import { trpc } from "@/trpc/client";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
@@ -20,6 +21,12 @@ const PaymentStatus = ({ orderEmail, orderId, isPaid }: PaymentStatusProps) => {
       refetchInterval: (data) => (data?.isPaid ? false : 1000),
     }
   );
+
+  // TODO: THIS IS A TEMPORARY FIX THAT I DON'T LIKE. CLEAR CART SHOULD ONLY HAPPEN ONCE CHECKOUT IS SUCCESSFUL AND ONLY THEN
+  const { clearCart } = useCart();
+  useEffect(() => {
+    clearCart();
+  }, []);
 
   useEffect(() => {
     if (data?.isPaid) router.refresh();

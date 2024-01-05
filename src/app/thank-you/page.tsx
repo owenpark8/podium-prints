@@ -1,6 +1,5 @@
 import PaymentStatus from "@/components/PaymentStatus";
 import { getPayloadClient } from "@/get-payload";
-import { useCart } from "@/hooks/use-cart";
 import { getServerSideUser } from "@/lib/payload-utils";
 import { formatPrice } from "@/lib/utils";
 import { Product, ProductFile, User } from "@/payload-types";
@@ -16,9 +15,6 @@ interface PageProps {
 }
 
 const ThankYouPage = async ({ searchParams }: PageProps) => {
-  const { clearCart } = useCart();
-  clearCart();
-
   const orderId = searchParams.orderId;
 
   const nextCookies = cookies();
