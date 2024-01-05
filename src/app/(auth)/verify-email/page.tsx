@@ -18,9 +18,10 @@ const VerifyEmailPage = ({ searchParams }: PageProps) => {
           </div>
         ) : (
           <div className="flex h-full flex-col items-center justify-center space-y-1">
+            {/* TODO: Make email sent image
             <div className="relative mb-4 h-60 w-60 text-muted-foreground">
               <Image src="/TODO.png" fill alt="email sent image" />
-            </div>
+            </div> */}
             <h3 className="font-semibold text-2xl">Check your inbox</h3>
             {toEmail ? (
               <p className="text-muted-foreground text-center">

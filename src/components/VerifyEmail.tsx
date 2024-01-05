@@ -30,9 +30,11 @@ const VerifyEmail = ({ token }: VerifyEmailProps) => {
   if (data?.success) {
     return (
       <div className="flex h-full flex-col items-center justify-center">
+        {/* TODO: Make email verified image
         <div className="relative mb-4 h-60 w-60 text-muted-foreground">
           <Image src="/TODO.png" fill alt="email verified image" />
         </div>
+        */}
         <h3 className="font-semibold text-2xl text-center">
           Your email has been verified!
         </h3>
