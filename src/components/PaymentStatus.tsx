@@ -22,12 +22,6 @@ const PaymentStatus = ({ orderEmail, orderId, isPaid }: PaymentStatusProps) => {
     }
   );
 
-  // TODO: THIS IS A TEMPORARY FIX THAT I DON'T LIKE. CLEAR CART SHOULD ONLY HAPPEN ONCE CHECKOUT IS SUCCESSFUL AND ONLY THEN
-  const { clearCart } = useCart();
-  useEffect(() => {
-    clearCart();
-  }, []);
-
   useEffect(() => {
     if (data?.isPaid) router.refresh();
   }, [data?.isPaid, router]);
