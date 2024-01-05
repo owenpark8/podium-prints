@@ -9,7 +9,7 @@ export default function Home() {
       <MaxWidthWrapper>
         <div className="py-20 mx-auto text-center flex flex-col items-center max-w-3xl">
           <h1 className="text-3xl font-bold tracking-tigh sm:text-5xl">
-            Your marketplace for high-quality motorsport artwork.
+            Your marketplace for high-quality automotive artwork.
           </h1>
           <p className="mt-6 text-lg max-w-prose text-muted-foreground">
             Welcome to Podium Prints. Every graphic we sell has been digitally
