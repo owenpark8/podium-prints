@@ -58,10 +58,9 @@ export const ProductFiles: CollectionConfig = {
     update: isAdminAccess,
     delete: isAdminAccess,
   },
-  // TODO: Impolement S3 bucket
   upload: {
     disableLocalStorage: true,
-    mimeTypes: ["application/pdf", "image/tiff", "image/png"],
+    mimeTypes: ["application/zip", "image/tiff"],
   },
   fields: [],
 };

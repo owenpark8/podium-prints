@@ -9,7 +9,6 @@ export const Media: CollectionConfig = {
     update: isAdminAccess,
     delete: isAdminAccess,
   },
-  // TODO: Upload media to S3 bucket
   upload: {
     staticURL: "/media",
     staticDir: "media",
