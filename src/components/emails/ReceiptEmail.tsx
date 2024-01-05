@@ -39,18 +39,18 @@ export const ReceiptEmail = ({
   return (
     <Html>
       <Head />
-      <Preview>Your DigitalHippo Receipt</Preview>
+      <Preview>Your Podium Prints Receipt</Preview>
 
       <Body style={main}>
         <Container style={container}>
           <Section>
             <Column>
-              <Img
-                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/hippo-email-sent.png`}
+              {/* <Img
+                src={`${process.env.NEXT_PUBLIC_SERVER_URL}/email-sent.png`}
                 width="100"
                 height="100"
-                alt="DigitalHippo"
-              />
+                alt="Podium Prints email sent image"
+              /> */}
             </Column>
 
             <Column align="right" style={tableCell}>
@@ -84,7 +84,7 @@ export const ReceiptEmail = ({
                     ...informationTableValue,
                   }}
                 >
-                  {orderId}
+                  {orderId.toUpperCase()}
                 </Link>
               </Column>
             </Row>
@@ -132,22 +132,6 @@ export const ReceiptEmail = ({
             );
           })}
 
-          <Section>
-            <Column style={{ width: "64px" }}></Column>
-            <Column
-              style={{
-                paddingLeft: "40px",
-                paddingTop: 20,
-              }}
-            >
-              <Text style={productTitle}>Transaction Fee</Text>
-            </Column>
-
-            <Column style={productPriceWrapper} align="right">
-              <Text style={productPrice}>{formatPrice(1)}</Text>
-            </Column>
-          </Section>
-
           <Hr style={productPriceLine} />
           <Section align="right">
             <Column style={tableCell} align="right">
@@ -160,15 +144,15 @@ export const ReceiptEmail = ({
           </Section>
           <Hr style={productPriceLineBottom} />
 
-          <Text style={footerLinksWrapper}>
+          {/* <Text style={footerLinksWrapper}>
             <Link href="#">Account Settings</Link> •{" "}
             <Link href="#">Terms of Sale</Link> •{" "}
             <Link href="#">Privacy Policy </Link>
           </Text>
           <Text style={footerCopyright}>
-            Copyright © 2023 DigitalHippo Inc. <br />{" "}
+            Copyright © 2024 Podium Prints <br />{" "}
             <Link href="#">All rights reserved</Link>
-          </Text>
+          </Text> */}
         </Container>
       </Body>
     </Html>
