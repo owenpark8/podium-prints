@@ -1,12 +1,11 @@
 import express from "express";
-import { WebhookRequest } from "./server";
-import { stripe } from "./lib/stripe";
-import type Stripe from "stripe";
-import { getPayloadClient } from "./get-payload";
-import { Product } from "./payload-types";
 import { Resend } from "resend";
+import type Stripe from "stripe";
 import { ReceiptEmailHtml } from "./components/emails/ReceiptEmail";
-import { useCart } from "./hooks/use-cart";
+import { getPayloadClient } from "./get-payload";
+import { stripe } from "./lib/stripe";
+import { Product } from "./payload-types";
+import { WebhookRequest } from "./server";
 
 const resend = new Resend(process.env.RESEND_API_KEY);
 

@@ -1,10 +1,8 @@
 "use client";
-
-import { useEffect, useState } from "react";
-import { Button } from "./ui/button";
 import { useCart } from "@/hooks/use-cart";
 import { Product } from "@/payload-types";
-import { toast } from "sonner";
+import { useEffect, useState } from "react";
+import { Button } from "./ui/button";
 
 const AddToCartButton = ({ product }: { product: Product }) => {
   const { addItem } = useCart();
