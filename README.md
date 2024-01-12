@@ -42,7 +42,7 @@ We offer a collection of vintage automotive artwork, including posters and print
    Ensure Docker is running, then execute the following command:
 
    ```bash
-   docker-compose up -d
+   make start-development
    ```
 
    At this point you will be able to open [http://localhost:3000](http://localhost:3000) with your browser to see the website. The admin dashboard is also available at [http://localhost:3000/admin](http://localhost:3000/admin) to manage the database.
@@ -69,5 +69,5 @@ We offer a collection of vintage automotive artwork, including posters and print
 
    2. **Stopping Containers:**
    ```bash
-   docker-compose down
+   make stop-development
    ```
